@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: integration-suite-test-component-git-source-ccoe
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: integration-suite-test-component-git-source-ccoe
+    app.kubernetes.io/part-of: integ-app-ckom
+  name: integration-suite-test-component-git-source-ccoe
+  namespace: integration-e2e-qyrd
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: integration-suite-test-component-git-source-ccoe
+    weight: 100
+status: {}
